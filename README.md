@@ -6,9 +6,9 @@ A powerful document conversion application powered by the POINTS-Reader vision-l
 
 POINTS-Reader is a distillation-free Vision-Language Model that achieves state-of-the-art performance on document conversion tasks. This application provides a user-friendly interface for extracting text from document images with high accuracy and generates formatted PDF outputs.
 
-
-
-
+| ![Image 3](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/8UzhFvAxm8g0bIwCJu7W0.png) |  ![Image 1](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/IfivFLIH8ZsXQOzU3gUiu.png) |  ![Image 2](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/Dn_jg_CCwPpNLZR70KMmW.png) | 
+|---|---|---|
+| Preview 1 | Preview 2 | Preview 3 |
 
 **Key Features:**
 - End-to-end document conversion from images
