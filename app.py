@@ -129,7 +129,8 @@ def generate_and_preview_pdf(image: Image.Image, text_content: str, font_size: i
 @spaces.GPU
 def process_document_stream(
     image: Image.Image, 
-    prompt_input: str, 
+    prompt_input: str,
+    image_scale_factor: float, # New parameter for image scaling
     max_new_tokens: int,
     temperature: float,
     top_p: float,
@@ -145,6 +146,21 @@ def process_document_stream(
     if not prompt_input or not prompt_input.strip():
         yield "Please enter a prompt.", ""
         return
+
+    # --- IMPLEMENTATION: Image Scaling based on user input ---
+    if image_scale_factor > 1.0:
+        try:
+            original_width, original_height = image.size
+            new_width = int(original_width * image_scale_factor)
+            new_height = int(original_height * image_scale_factor)
+            print(f"Scaling image from {image.size} to ({new_width}, {new_height}) with factor {image_scale_factor}.")
+            # Use a high-quality resampling filter for better results
+            image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+        except Exception as e:
+            print(f"Error during image scaling: {e}")
+            # Continue with the original image if scaling fails
+            pass
+    # --- END IMPLEMENTATION ---
 
     temp_image_path = None
     try:
@@ -230,6 +246,16 @@ def create_gradio_interface():
                 image_input = gr.Image(label="Upload Image", type="pil", sources=['upload'])
                 
                 with gr.Accordion("Advanced Settings", open=False):
+                    # --- NEW UI ELEMENT: Image Scaling Slider ---
+                    image_scale_factor = gr.Slider(
+                        minimum=1.0, 
+                        maximum=3.0, 
+                        value=1.0, 
+                        step=0.1, 
+                        label="Image Upscale Factor",
+                        info="Increases image size before processing. Can improve OCR on small text. Default: 1.0 (no change)."
+                    )
+                    # --- END NEW UI ELEMENT ---
                     max_new_tokens = gr.Slider(minimum=512, maximum=8192, value=2048, step=256, label="Max New Tokens")
                     temperature = gr.Slider(label="Temperature", minimum=0.1, maximum=1.0, step=0.05, value=0.7)
                     top_p = gr.Slider(label="Top-p (nucleus sampling)", minimum=0.05, maximum=1.0, step=0.05, value=0.8)
@@ -263,7 +289,11 @@ def create_gradio_interface():
                     
                     with gr.Tab("📰 README.md"):
                         with gr.Accordion("(Result.md)", open=True): 
-                            markdown_output = gr.Markdown()
+                            # --- FIX: Added latex_delimiters to enable LaTeX rendering ---
+                            markdown_output = gr.Markdown(latex_delimiters=[
+                                {"left": "$$", "right": "$$", "display": True},
+                                {"left": "$", "right": "$", "display": False}
+                            ])
 
                     with gr.Tab("📋 PDF Preview"):
                         generate_pdf_btn = gr.Button("📄 Generate PDF & Render", variant="primary")
@@ -276,7 +306,8 @@ def create_gradio_interface():
 
         process_btn.click(
             fn=process_document_stream,
-            inputs=[image_input, prompt_input, max_new_tokens, temperature, top_p, top_k, repetition_penalty],
+            # --- UPDATE: Add the new slider to the inputs list ---
+            inputs=[image_input, prompt_input, image_scale_factor, max_new_tokens, temperature, top_p, top_k, repetition_penalty],
             outputs=[raw_output_stream, markdown_output]
         )
         
